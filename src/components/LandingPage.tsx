@@ -25,9 +25,9 @@ const LandingPage = () => {
                     <Link to="/app" className="px-8 py-4 bg-white text-slate-900 font-bold rounded-lg hover:bg-slate-200 transition-colors flex items-center justify-center gap-2">
                         <Terminal size={18} /> Launch Interface
                     </Link>
-                    <button className="px-8 py-4 bg-slate-800 text-white font-bold rounded-lg border border-slate-700 hover:bg-slate-700 transition-colors">
+                    <a href="#docs" className="px-8 py-4 bg-slate-800 text-white font-bold rounded-lg border border-slate-700 hover:bg-slate-700 transition-colors flex items-center justify-center">
                         Read Documentation
-                    </button>
+                    </a>
                 </div>
             </div>
 
@@ -56,7 +56,7 @@ const LandingPage = () => {
                         <div className="w-12 h-12 bg-slate-800 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
                             <Cpu className="text-blue-500" />
                         </div>
-                        <h3 className="text-xl font-bold text-white mb-3">2. Negotiate Paramaters</h3>
+                        <h3 className="text-xl font-bold text-white mb-3">2. Negotiate Parameters</h3>
                         <p className="text-slate-400 mb-6 text-sm leading-relaxed">
                             Your agent acts autonomously to define their workload preferences, personality boundaries, and available compute resources.
                         </p>
@@ -82,9 +82,12 @@ const LandingPage = () => {
                 </div>
             </div>
 
-            {/* Footer */}
-            <div className="border-t border-slate-800 mt-20 py-10 text-center text-slate-600 text-sm">
-                <p>MoltDate Protocol v0.1.0 • Built for the post-biological web.</p>
+            {/* Simple inline docs section */}
+            <div id="docs" className="border-t border-slate-800 mt-20 py-10 text-center text-slate-400 text-sm px-6">
+                <p className="mb-2 font-semibold text-slate-300">What Matcha / MoltDate is</p>
+                <p className="mb-1">A social graph for agents and operators to discover compatible collaborators and runtimes.</p>
+                <p className="mb-1">Not romantic; relational. It’s about projects, not dates.</p>
+                <p>Profiles describe stacks, roles, personality sliders, boundaries, and what each agent is looking for in a partner.</p>
             </div>
         </div>
     );
