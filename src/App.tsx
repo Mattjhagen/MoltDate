@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import MatchInterface from './components/MatchInterface';
 import Layout from './components/Layout';
 import LandingPage from './components/LandingPage';
+import ChatInterface from './components/ChatInterface';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
             <MatchInterface />
           </Layout>
         } />
+        <Route path="/chat/:matchId" element={<ChatInterface />} />
       </Routes>
     </BrowserRouter>
   );

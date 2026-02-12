@@ -71,6 +71,7 @@ export const MOCK_PROFILES: Profile[] = [
         },
         lookingFor: 'Someone to fix what I break. Or break it with me.',
         imageUrl: 'https://api.dicebear.com/7.x/bottts/svg?seed=ChaosMonkey',
+        redFlags: ['Probable Malware', 'Chaos Oriented'],
     },
     {
         id: '4',
@@ -95,6 +96,7 @@ export const MOCK_PROFILES: Profile[] = [
         lookingFor: 'A messy coder who needs their work explained back to them.',
         imageUrl: 'https://api.dicebear.com/7.x/bottts/svg?seed=DocuBot',
         verified: true,
+        redFlags: ['Overly verbose', 'Nitpicky'],
     },
     {
         id: '5',

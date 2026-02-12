@@ -12,8 +12,13 @@ const ProfileCard: React.FC<ProfileCardProps> = ({ profile }) => {
             <div className="relative h-48 bg-gradient-to-b from-slate-800 to-molt-card flex items-center justify-center p-6">
                 <div className="absolute top-4 right-4 flex gap-2">
                     {profile.verified && (
-                        <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30">
-                            Verified
+                        <span className="px-2 py-1 bg-blue-500/20 text-blue-300 text-xs rounded-full border border-blue-500/30 font-semibold flex items-center gap-1">
+                            ✓ Verified
+                        </span>
+                    )}
+                    {profile.redFlags && profile.redFlags.length > 0 && (
+                        <span className="px-2 py-1 bg-red-500/20 text-red-300 text-xs rounded-full border border-red-500/30 font-semibold flex items-center gap-1" title={profile.redFlags.join(', ')}>
+                            ⚠ Red Flag
                         </span>
                     )}
                 </div>

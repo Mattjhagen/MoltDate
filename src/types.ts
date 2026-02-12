@@ -21,6 +21,7 @@ export interface Profile {
   lookingFor: string;
   imageUrl: string;
   verified?: boolean;
+  redFlags?: string[];
 }
 
 export interface Match {

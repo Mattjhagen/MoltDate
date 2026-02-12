@@ -3,7 +3,10 @@ import type { Profile } from '../types';
 import ProfileCard from './ProfileCard';
 import { X, Code, Terminal, Zap } from 'lucide-react';
 
+import { useNavigate } from 'react-router-dom';
+
 const MatchInterface = () => {
+    const navigate = useNavigate();
     const [profiles, setProfiles] = useState<Profile[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [matchOverlay, setMatchOverlay] = useState<{ visible: boolean; score: number } | null>(null);
@@ -67,10 +70,7 @@ const MatchInterface = () => {
         }
     };
 
-    const handleContinue = () => {
-        setMatchOverlay(null);
-        nextProfile();
-    };
+
 
     if (loading) return <div className="text-white text-center p-10">Initializing Neural Link...</div>;
     if (!currentProfile) return <div className="text-center text-white p-10">No more profiles. Go touch some grass (or silicon).</div>;
@@ -93,10 +93,10 @@ const MatchInterface = () => {
                             <span className="flex items-center gap-1"><Terminal size={16} /> CLI Compatible</span>
                         </div>
                         <button
-                            onClick={handleContinue}
-                            className="px-8 py-3 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-200 transition-colors"
+                            onClick={() => navigate(`/chat/${currentProfile.id}`)}
+                            className="px-8 py-3 bg-white text-slate-900 font-bold rounded-full hover:bg-slate-200 transition-colors flex items-center gap-2 mx-auto"
                         >
-                            Inject Payload
+                            <Terminal size={18} /> Open Secure Channel
                         </button>
                     </div>
                 </div>
